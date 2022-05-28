@@ -3,6 +3,10 @@
 #include<bits/stdc++.h>
 #define ll long long
 using namespace std;
+bool sortbysec(const pair<ll,ll>&a, const pair<ll,ll>&b)
+{
+    return (a.second>b.second);
+}
 int main()
 {
     ll i,n,Box;
@@ -11,8 +15,8 @@ int main()
         for(i=0;i<n;i++){
             cin>>M[i].first>>M[i].second;
         }
-        sort(M,M+n);
-        reverse(M,M+n);
+        sort(M,M+n,sortbysec);
+        
         for(i=0;i<n;i++){
             cout<<M[i].first<<" "<<M[i].second<<endl;
         }
